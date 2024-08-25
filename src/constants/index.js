@@ -8,3 +8,5 @@ export const TOGGLE_MODE = {
   done: "done",
   undone: "undone",
 };
+
+export const localStorageKey = "task-list";

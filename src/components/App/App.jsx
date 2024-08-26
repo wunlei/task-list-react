@@ -1,9 +1,13 @@
 import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
+import s from "./App.module.scss";
 
 function App() {
   return (
     <ErrorBoundary>
-      <div>Todo</div>
+      <main className={s.main}>
+        <h1 className={s.pageTitle}>todos</h1>
+        <div className={s.appContainer}></div>
+      </main>
     </ErrorBoundary>
   );
 }

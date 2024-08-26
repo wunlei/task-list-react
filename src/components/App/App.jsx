@@ -1,5 +1,11 @@
+import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
+
 function App() {
-  return <div>Todo</div>;
+  return (
+    <ErrorBoundary>
+      <div>Todo</div>
+    </ErrorBoundary>
+  );
 }
 
 export default App;

@@ -1,4 +1,4 @@
-import ErrorBoundary from "../ErrorBoundary/ErrorBoundary";
+import ErrorBoundary from "../commons/ErrorBoundary/ErrorBoundary";
 import s from "./App.module.scss";
 
 function App() {

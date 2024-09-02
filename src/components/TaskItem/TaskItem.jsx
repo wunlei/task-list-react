@@ -9,7 +9,7 @@ import {
 } from "@/state/tasks/actions.tasks";
 import EditIcon from "@/assets/edit.svg";
 import DeleteIcon from "@/assets/trash.svg";
-import IconBtn from "../commons/IconBtn/IconBtn";
+import IconBtn from "@/components/commons/IconBtn/IconBtn";
 import TaskEditor from "./TaskEditor/TaskEditor";
 import s from "./TaskItem.module.scss";
 

@@ -1,6 +1,6 @@
 import { selectTasksIds } from "@/state/tasks/selectors.tasks";
 import { useSelector } from "react-redux";
-import TaskItem from "../TaskItem/TaskItem";
+import TaskItem from "@/components/TaskItem/TaskItem";
 import s from "./TaskList.module.scss";
 
 function TaskList() {

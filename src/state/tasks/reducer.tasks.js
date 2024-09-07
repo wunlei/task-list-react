@@ -31,9 +31,9 @@ function toggleTask(state, action) {
 
   const isAllDone = state.tasks.every((item) => item.isDone);
   if (isAllDone) {
-    state.toggleMode = "undone";
+    state.toggleMode = TOGGLE_MODE.undone;
   } else {
-    state.toggleMode = "done";
+    state.toggleMode = TOGGLE_MODE.done;
   }
 }
 
@@ -46,14 +46,14 @@ function clearCompletedTasks(state) {
 }
 
 function toggleAllTasks(state) {
-  if (state.toggleMode === "done") {
-    state.toggleMode = "undone";
+  if (state.toggleMode === TOGGLE_MODE.done) {
+    state.toggleMode = TOGGLE_MODE.undone;
     state.tasks.forEach((item) => (item.isDone = true));
 
     return;
   }
-  if (state.toggleMode === "undone") {
-    state.toggleMode = "done";
+  if (state.toggleMode === TOGGLE_MODE.undone) {
+    state.toggleMode = TOGGLE_MODE.done;
     state.tasks.forEach((item) => (item.isDone = false));
   }
 }

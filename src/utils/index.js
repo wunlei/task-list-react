@@ -1,6 +1,6 @@
 import { localStorageKey } from "@/constants";
-import { filtersInitialState } from "@/state/filters/reducer.filters";
-import { tasksInitialState } from "@/state/tasks/reducer.tasks";
+import { filtersInitialState } from "@/state/filters/slice.filters";
+import { tasksInitialState } from "@/state/tasks/slice.tasks";
 
 export function newTaskId(tasks) {
   const maxId = tasks.reduce((maxId, todo) => Math.max(todo.id, maxId), -1);

@@ -2,11 +2,7 @@ import { memo, useState } from "react";
 import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTaskById } from "@/state/tasks/selectors.tasks";
-import {
-  deleteTask,
-  toggleTask,
-  updateTaskText,
-} from "@/state/tasks/actions.tasks";
+import { deleteTask, toggleTask, updateTaskText } from "@/state/tasks/slice.tasks";
 import EditIcon from "@/assets/edit.svg";
 import DeleteIcon from "@/assets/trash.svg";
 import IconBtn from "@/components/commons/IconBtn/IconBtn";

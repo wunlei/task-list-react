@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectTotalTasksCount } from "@/state/tasks/selectors.tasks";
-import { addTask, toggleAllTasks } from "@/state/tasks/actions.tasks";
+import { addTask, toggleAllTasks } from "@/state/tasks/slice.tasks";
 import IconBtn from "@/components/commons/IconBtn/IconBtn";
 import AddTaskIcon from "@/assets/plus-circle.svg";
 import ToggleAllIcon from "@/assets/checklist.svg";

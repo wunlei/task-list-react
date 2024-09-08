@@ -1,6 +1,4 @@
-import { applyMiddleware } from "redux";
 import { localStorageKey } from "@/constants";
-import { composeWithDevToolsDevelopmentOnly } from "@redux-devtools/extension";
 
 const localStorageMiddleware = (storeAPI) => (next) => (action) => {
   const result = next(action);
@@ -11,6 +9,4 @@ const localStorageMiddleware = (storeAPI) => (next) => (action) => {
   return result;
 };
 
-export const middleware = composeWithDevToolsDevelopmentOnly(
-  applyMiddleware(localStorageMiddleware),
-);
+export const middleware = [localStorageMiddleware];

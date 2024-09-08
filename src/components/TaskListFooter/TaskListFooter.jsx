@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
-import { changeFilter } from "@/state/filters/actions.filters";
+import { changeFilter } from "@/state/filters/slice.filters";
 import { selectCurrFilter } from "@/state/filters/selectors.filters";
-import { deleteCompletedTasks } from "@/state/tasks/actions.tasks";
+import { deleteCompletedTasks } from "@/state/tasks/slice.tasks";
 import {
   selectUndoneTasksCount,
   selectHasCompletedTasks,

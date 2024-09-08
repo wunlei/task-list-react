@@ -1,16 +1,19 @@
-import { combineReducers, legacy_createStore as createStore } from "redux";
-import tasksReducer from "./tasks/reducer.tasks";
-import filterReducer from "./filters/reducer.filters";
-import { middleware } from "./middlewares";
+import { configureStore } from "@reduxjs/toolkit";
 import { getStateFromLS } from "@/utils";
-
-const rootReducer = combineReducers({
-  tasks: tasksReducer,
-  filters: filterReducer,
-});
+import tasksSlice from "@/state/tasks/slice.tasks";
+import filtersSlice from "@/state/filters/slice.filters";
+import { middleware } from "@/state/middlewares";
 
 const preloadedState = getStateFromLS();
 
-const store = createStore(rootReducer, preloadedState, middleware);
+const store = configureStore({
+  reducer: {
+    tasks: tasksSlice,
+    filters: filtersSlice,
+  },
+  preloadedState,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(middleware),
+});
 
 export default store;

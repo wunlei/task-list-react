@@ -1,12 +1,4 @@
-import { produce } from "immer";
 import { newTaskId } from "@/utils";
-import { TOGGLE_MODE } from "@/constants";
-import { tasksActions } from "./actions.tasks";
-
-export const tasksInitialState = {
-  tasks: [],
-  toggleMode: TOGGLE_MODE.done,
-};
 
 function addTask(state, action) {
   state.tasks.unshift({
@@ -41,7 +33,7 @@ function deleteTask(state, action) {
   state.tasks = state.tasks.filter((item) => item.id !== action.payload);
 }
 
-function clearCompletedTasks(state) {
+function deleteCompletedTasks(state) {
   state.tasks = state.tasks.filter((item) => !item.isDone);
 }
 
@@ -58,35 +50,13 @@ function toggleAllTasks(state) {
   }
 }
 
-function tasksReducer(state = tasksInitialState, action) {
-  return produce(state, (draft) => {
-    switch (action.type) {
-      case tasksActions.ADD_TASK: {
-        addTask(draft, action);
-        break;
-      }
-      case tasksActions.UPDATE_TASK_TEXT: {
-        updateTaskText(draft, action);
-        break;
-      }
-      case tasksActions.TOGGLE_TASK: {
-        toggleTask(draft, action);
-        break;
-      }
-      case tasksActions.DELETE_TASK: {
-        deleteTask(draft, action);
-        break;
-      }
-      case tasksActions.CLEAR_COMPLETED: {
-        clearCompletedTasks(draft);
-        break;
-      }
-      case tasksActions.TOGGLE_ALL: {
-        toggleAllTasks(draft);
-        break;
-      }
-    }
-  });
-}
+const tasksReducers = {
+  addTask,
+  updateTaskText,
+  toggleTask,
+  deleteTask,
+  deleteCompletedTasks,
+  toggleAllTasks,
+};
 
-export default tasksReducer;
+export default tasksReducers;

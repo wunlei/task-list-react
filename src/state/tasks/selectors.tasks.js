@@ -1,5 +1,5 @@
-import { createSelector } from "reselect";
-import { selectCurrFilter } from "../filters/selectors.filters";
+import { createSelector } from "@reduxjs/toolkit";
+import { selectCurrFilter } from "@/state/filters/selectors.filters";
 import { FILTERS } from "@/constants";
 
 const selectSlice = (state) => state.tasks;
